@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Pulling code from GitHub...'
                 git branch: 'main',
-                    url: 'https://github.com/subalakshmir087-dataqueen/devops-practice.git'
+                    url: 'https://github.com/subalakshmir087-dataqueen/devops-practice..git'
             }
         }
 

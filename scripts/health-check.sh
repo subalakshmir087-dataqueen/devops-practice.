@@ -2,7 +2,7 @@
 set -e
 #variables
 APP_NAME="myapp"
-APP_URL="http://34.10.42.236:8081"
+APP_URL="http://localhost:8081"
 LOG_FILE="/var/log/health-check.log"
 DATE=$(date '+%Y-%m-%d %H:%M:%S')
 DISK_THRESHOLD=80
@@ -14,8 +14,8 @@ echo "[$DATE] $1" | sudo tee -a $LOG_FILE
 
 check_app(){
 log "checking app health..."
-response=$(curl -s -o /dev/null -w "%{http_code}" $APP_URL)
-if [ "$response"="200" ]; then 
+response=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10  $APP_URL)
+if [ "$response"= "200" ]; then 
 log "app is healthy! HTTP: $response"
 else
 log "app is down!  HTTP: $response"
