@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: us-central1-docker.pkg.dev/gcp-devops-lab-496705/myapp-repo/myapp:1.0.0
+        image: us-central1-docker.pkg.dev/gcp-devops-project-498805/myapp-repo/myapp:1.0.0
         ports:
         - containerPort: 8080
         resources:
